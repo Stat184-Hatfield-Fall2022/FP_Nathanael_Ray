@@ -10,40 +10,40 @@ The purpose of this project is to provide you with an opportunity to put into pr
 
 Use the following checklist to ensure that you have completed all of the tasks.
 
-- [ ] Read through README
-- [ ] Find 1 or 2 other individuals who you want to work with and form a team. (NOTE: unless you have specifically been given permission to do so, you may not work alone.)
-- [ ] Create a repo using this repo as the template. Name your repo "FP_Name1_Name2_Name3" where Name# are the team member's names.
-- [ ] Make sure that each team member has access to the repo.
-- [ ] Come up with a topic and set of research questions your team will explore.
-- [ ] Make a plan for your work. (Target Completion: Friday, Nov. 18, 2022)
-- [ ] Locate appropriate data sources for your project.
-  - [ ] Your main data source may __not__ be one that we used in class nor be found in any R package.
-  - [ ] Supplementary data sources may come from anywhere.
-- [ ] Read in your data and perform any necessary data wrangling and cleaning.
-- [ ] Conduct Exploratory Data Analysis.
-- [ ] Prepare a reproducible report
-  - [ ] Use a RMD file; output type is your choice.
-  - [ ] The report should be well organized with section headings
-  - [ ] Code should be collapsed/hidden for HTML, and R Notebooks or in a Code Appendix at the end for a PDF.
-  - [ ] All outputs should be accompanied by narrative text to explain what the reader should be seeing.
-  - [ ] State your research questions and explain them.
-  - [ ] Describe your data sources (where they come from, what was their original purpose, who/what comprise the cases in each).
-  - [ ] Describe what attributes you'll focus your analysis on (mention if they are part of your data sets or if you created them out of your data sets).
-  - [ ] Create multiple data visualizations that assist both the team and readers in understanding the data.
+- [x] Read through README
+- [x] Find 1 or 2 other individuals who you want to work with and form a team. (NOTE: unless you have specifically been given permission to do so, you may not work alone.)
+- [x] Create a repo using this repo as the template. Name your repo "FP_Name1_Name2_Name3" where Name# are the team member's names.
+- [x] Make sure that each team member has access to the repo.
+- [x] Come up with a topic and set of research questions your team will explore.
+- [x] Make a plan for your work. (Target Completion: Friday, Nov. 18, 2022)
+- [x] Locate appropriate data sources for your project.
+  - [x] Your main data source may __not__ be one that we used in class nor be found in any R package.
+  - [x] Supplementary data sources may come from anywhere.
+- [x] Read in your data and perform any necessary data wrangling and cleaning.
+- [x] Conduct Exploratory Data Analysis.
+- [x] Prepare a reproducible report
+  - [x] Use a RMD file; output type is your choice.
+  - [x] The report should be well organized with section headings
+  - [x] Code should be collapsed/hidden for HTML, and R Notebooks or in a Code Appendix at the end for a PDF.
+  - [x] All outputs should be accompanied by narrative text to explain what the reader should be seeing.
+  - [x] State your research questions and explain them.
+  - [x] Describe your data sources (where they come from, what was their original purpose, who/what comprise the cases in each).
+  - [x] Describe what attributes you'll focus your analysis on (mention if they are part of your data sets or if you created them out of your data sets).
+  - [x] Create multiple data visualizations that assist both the team and readers in understanding the data.
     - Data visualizations should show a variety of your skills and geometries.
     - __Optional__: If your research question/data make sense to do so, try creating a map.
-  - [ ] Create at least one visual table (not a display of raw data) that assists both the team and readers in understanding the data.
-  - [ ] Have narrative text explaining every data visualization and table as well as setting a framework.
-  - [ ] All code should be written according to a Style Guide of your choice. List this Style Guide as a code comment in your first code chunk.
-  - [ ] __Optional:__ For those who want to challenge themselves further, feel free to include a section on using other statistical methods such as hypothesis testing, regression, ANOVA, or machine learning--see Chapter 18 of the Data Computing eBook.
-- [ ] Use GitHub to share changes and edits; there should be multiple commits to your repo and at least 2 by each team member. You'll need to give Neil (neilhatfield) access to your repo.
-- [ ] __Optional:__ Your group may also wish to use `trackdown`
-- [ ] You'll submit an output file of your choice, the RMD, and a link to your GitHub Repo to the appropriate submission portal in Canvas.
+  - [x] Create at least one visual table (not a display of raw data) that assists both the team and readers in understanding the data.
+  - [x] Have narrative text explaining every data visualization and table as well as setting a framework.
+  - [x] All code should be written according to a Style Guide of your choice. List this Style Guide as a code comment in your first code chunk.
+  - [x] __Optional:__ For those who want to challenge themselves further, feel free to include a section on using other statistical methods such as hypothesis testing, regression, ANOVA, or machine learning--see Chapter 18 of the Data Computing eBook.
+- [x] Use GitHub to share changes and edits; there should be multiple commits to your repo and at least 2 by each team member. You'll need to give Neil (neilhatfield) access to your repo.
+- [x] __Optional:__ Your group may also wish to use `trackdown`
+- [x] You'll submit an output file of your choice, the RMD, and a link to your GitHub Repo to the appropriate submission portal in Canvas.
     - __Due Date: Wednesday, Dec. 14th, 2022 by 11:59pm ET__
-- [ ] During the last week of classes (Dec. 7th and Dec. 9th), your group will need to share a short presentation 3-5 minutes of what you've investigated and learned.
-- [ ] Each member of the team needs to complete Peer/Self Evaluations using the included Evaluation template and upload the knitted PDF to the appropriate submission portal in Canvas.
+- [x] During the last week of classes (Dec. 7th and Dec. 9th), your group will need to share a short presentation 3-5 minutes of what you've investigated and learned.
+- [x] Each member of the team needs to complete Peer/Self Evaluations using the included Evaluation template and upload the knitted PDF to the appropriate submission portal in Canvas.
     - __Due Date: Thursday, Dec. 15th, 2022 by 11:59pm ET__
-- [ ] Update this README file to check off all elements you have completed by placing an x in side the square brackets: [x] 
+- [x] Update this README file to check off all elements you have completed by placing an x in side the square brackets: [x] 
 
 ## Learning Objectives and Outcomes Assessed
 + Code: Students will develop their ability to create reproducible code that others can understand.
