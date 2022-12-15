@@ -37,7 +37,7 @@ Use the following checklist to ensure that you have completed all of the tasks.
   - [x] All code should be written according to a Style Guide of your choice. List this Style Guide as a code comment in your first code chunk.
   - [x] __Optional:__ For those who want to challenge themselves further, feel free to include a section on using other statistical methods such as hypothesis testing, regression, ANOVA, or machine learning--see Chapter 18 of the Data Computing eBook.
 - [x] Use GitHub to share changes and edits; there should be multiple commits to your repo and at least 2 by each team member. You'll need to give Neil (neilhatfield) access to your repo.
-- [x] __Optional:__ Your group may also wish to use `trackdown`
+- [] __Optional:__ Your group may also wish to use `trackdown`
 - [x] You'll submit an output file of your choice, the RMD, and a link to your GitHub Repo to the appropriate submission portal in Canvas.
     - __Due Date: Wednesday, Dec. 14th, 2022 by 11:59pm ET__
 - [x] During the last week of classes (Dec. 7th and Dec. 9th), your group will need to share a short presentation 3-5 minutes of what you've investigated and learned.
