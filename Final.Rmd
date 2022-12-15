@@ -1,0 +1,162 @@
+---
+title: "An Exploratory Analysis On Chess.com Grandmasters"
+author: "Yipeng Zhao, Nathanael Nemia, Ahmed Mosaad"
+date: "`r Sys.Date()`"
+output:
+  word_document: default
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE, warning=FALSE, message = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+## INTRO
+Every year chess.com releases hundreds of thousands of games played by GM’s (Grandmasters) on their platform. Using this data some questions will be explored such as: what is the distribution of game types played, what rating of players play the most frequently, what methods are usually used to end games. Please keep in mind that this data is only from grandmasters who played regardless of their rating. Sometimes they may play on lower rated accounts etc. which may distort the data, so, some conclusions may not be entirely accurate. 
+
+```{r echo = FALSE, warning=FALSE, message = FALSE}
+library(tidyverse)
+chess <- read_csv("C:/Users/godca/Downloads/archive/chess.csv")
+head(chess)
+```
+
+```{r echo = FALSE, warning=FALSE, message = FALSE}
+chess %>%
+    ggplot(aes(x=white_rating)) +
+    geom_histogram()
+```
+
+
+```{r echo= FALSE, warning=FALSE, message = FALSE}
+chess %>%
+    ggplot(aes(x=black_rating)) +
+    geom_histogram()
+```
+<br>
+<br>
+The figures above simply show games played on the chess.com website from the year 2021 by GM’s. A GM is a chess player who has achieved 2500 points in their career, they need not maintain that number. Even though the average rating of users on chess.com is around 1400, the average GM is about 2500. These graphs show the distribution of games played based on rating with most games played by GM’s at about 2600 rating. The symmetry of both figures shows the evenness of the chess.com matchmaking system.
+
+```{r echo= FALSE, warning=FALSE, message = FALSE}
+chess %>%
+    group_by(rated) %>%
+    summarise(
+        n = n()
+    )
+```
+
+```{r echo= FALSE, warning=FALSE, message = FALSE}
+chess %>%
+  group_by(white_result)%>%
+  summarise(
+        n = n()
+    ) %>%
+    arrange(-n) %>%
+    head(10)
+```
+
+
+
+```{r echo= FALSE, warning=FALSE, message = FALSE}
+chess %>%
+  group_by(black_result)%>%
+  summarise(
+        n = n()
+    ) %>%
+    arrange(-n) %>%
+    head(10)
+```
+<br>
+<br>
+This table shows whether the game played was rated as well as the distribution of ways the game ended. You can see that the majority of games played are rated.
+
+```{r echo= FALSE, warning=FALSE, message = FALSE}
+chess %>%
+    ggplot(data=chess, mapping=aes(x=white_result)) +
+    geom_bar(stat = 'count', fill = 'red', colour = 'darkred') + 
+    theme(text = element_text(size=20),
+        axis.text.x = element_text(angle=90, hjust=1)) 
+```
+```{r echo= FALSE, warning=FALSE, message = FALSE}
+chess %>%
+    ggplot(data=chess, mapping=aes(x=black_result)) +
+    geom_bar(stat = 'count', fill = 'red', colour = 'darkred') + 
+    theme(text = element_text(size=20),
+        axis.text.x = element_text(angle=90, hjust=1)) 
+```
+<br>
+<br>
+The data above gives insight into the slight advantage of playing with the white pieces. White’s win rate is at 50% while black is at 47%, the difference is due to a fundamental rule where the white pieces always make the first move. Also, it should be noted that a considerable amount of games end in a timeout as well as resignation which shows the understanding the GM’s have to know when they have lost before getting checkmated.
+
+
+```{r echo= FALSE, warning=FALSE, message = FALSE}
+chess %>%
+    group_by(time_class) %>%
+    summarise(
+        n = n()
+    )
+chess %>%
+    group_by(time_control) %>%
+    summarise(
+        n = n()
+    ) %>%
+    arrange(-n) %>%
+    head(10)
+```
+<br>
+<br>
+This table shows the distribution of games played in the given time class as well as the type of time control they use.
+
+
+```{r echo= FALSE, warning=FALSE, message = FALSE}
+chess %>% 
+    mutate(winner = case_when(
+        white_result == "win" ~ "white",
+        black_result == "win" ~ "black",
+        white_result %in% c("stalemate", "repitition", "agreed", "insufficient", "timevsinsufficient") ~ "draw",
+        black_result %in% c("stalemate", "repitition", "agreed", "insufficient", "timevsinsufficient") ~ "draw"
+    )) %>% 
+    mutate(time_class = factor(time_class, levels=c("bullet", "blitz", "rapid", "daily"), ordered=TRUE)) %>% 
+    mutate(winner = factor(winner, levels=c("white", "black", "draw"))) %>% 
+    filter(
+        time_class %in% c("bullet", "blitz", "rapid", "daily"),
+        white_rating > 2000,
+        black_rating > 2000,
+        rated == TRUE,
+        rules == "chess",
+        winner %in% c("white", "black", "draw")
+    ) %>% 
+    group_by(time_class, winner) %>% 
+    summarise(
+        n = n()
+    ) %>%
+    ggplot(aes(y=time_class, weight=n, fill=reorder(winner, -n))) +
+    geom_bar(position="dodge") +
+    labs(
+        x = "number of games",
+        y = "game type",
+        fill = "winner"
+    ) +
+    scale_y_discrete(labels= c("bullet\n(<3 mins)", "blitz\n(3-10 mins)", "rapid\n(10-15 mins)", "daily")) +
+    theme_classic() +
+    NULL
+```
+<br>
+<br>
+This figure focuses on the time control, which is how long each player has per game. The most common games are the blitz and bullet formats which make the games that can last for 10 minutes. It can be said that GM’s favor shorter games in online chess rather than the longer draining classical time formats. Again, the white pieces have a slight advantage for making the first move. 
+
+
+## Conclusion
+Chess is a complex game but when looked at from the perspective of statistics there are some insights that simplify the sport. Through the distribution of the GM’s chess games we can see chess for what it is without the bias of inexperienced players’ data. The slightly higher win percentage with the white pieces and the favoring of shorter timed games lead us to believe that chess is more fun when players can rely on instinct and are pressured by time rather than thinking 13 or 14 moves ahead with games lasting hours long. 
+
+
+
+
+
+
+
+
+
+
